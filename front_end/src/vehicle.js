@@ -32,7 +32,7 @@ class Vehicle{
     this.element.innerHTML +=`
       <div>
       
-        <h3>${this.year} - ${this.make} - ${this.modle}</h3>
+        <h3>${this.year} - ${this.make} - ${this.model}</h3>
         <p>${this.engine}</p>
         <p>${this.passanger_volume}</p>
         <p>${this.safety_rating}</p>
