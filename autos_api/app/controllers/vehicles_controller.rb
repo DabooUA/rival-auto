@@ -36,6 +36,7 @@ class VehiclesController < ApplicationController
   # DELETE /vehicles/1
   def destroy
     @vehicle.destroy
+    render json: {message: 'Vehicle comparison successfully deleted!'}
   end
 
   private
@@ -46,6 +47,6 @@ class VehiclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vehicle_params
-      params.require(:vehicle).permit(:category_id, :year, :make, :model, :engine, :passanger_volume, :safety_rating, :cargo_volume, :m_s_r_p, :combined_mpg, :quaily_reliability, :horsepower, :resale_value, :picutre, :insurance_cost, :consumer_rating)
+      params.require(:vehicle).permit(:category_id, :year, :make, :model, :engine, :passanger_volume, :safety_rating, :cargo_volume, :m_s_r_p, :combined_mpg, :quality_reliability, :horsepower, :resale_value, :picutre, :insurance_cost, :consumer_rating)
     end
 end

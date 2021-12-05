@@ -11,7 +11,7 @@ class CreateVehicles < ActiveRecord::Migration[6.1]
       t.string :cargo_volume
       t.string :m_s_r_p
       t.string :combined_mpg
-      t.string :quaily_reliability
+      t.string :quality_reliability
       t.string :horsepower
       t.string :resale_value
       t.string :picutre
