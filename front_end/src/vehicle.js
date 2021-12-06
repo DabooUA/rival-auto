@@ -2,6 +2,7 @@ class Vehicle{
 
   static all = []
   static vehiclesContainer = document.getElementById("vehicles-container")
+  static vehicleForm = document.getElementById("form-container")
 
   constructor({id, category_id, year, make, model, engine, passanger_volume, safety_rating, cargo_volume, m_s_r_p, combined_mpg, quality_reliability, horsepower, resale_value, insurance_cost, consumer_rating}){
     this.id = id
@@ -24,6 +25,7 @@ class Vehicle{
     this.element = document.createElement('li')
     this.element.dataset.id = this.id
     this.element.id = `vehicle-${this.id}`
+    this.element.addEventListener('click', this.handleClick)
 
     Vehicle.all.push(this)
   }
@@ -31,26 +33,61 @@ class Vehicle{
   vehicleHTML(){
     this.element.innerHTML +=`
       <div>
-      
         <h3>${this.year} - ${this.make} - ${this.model}</h3>
-        <p>${this.engine}</p>
-        <p>${this.passanger_volume}</p>
-        <p>${this.safety_rating}</p>
-        <p>${this.cargo_volume}</p>
-        <p>${this.m_s_r_p}</p>
-        <p>${this.combined_mpg}</p>
-        <p>${this.quality_reliability}</p>
-        <p>${this.horsepower}</p>
-        <p>${this.resale_value}</p>
-        <p>${this.insurance_cost}</p>
-        <p>${this.consumer_rating}</p>
+        <p>Engine: ${this.engine}</p>
+        <p>Passanger Volume: ${this.passanger_volume}</p>
+        <p>Safety Rating: ${this.safety_rating}</p>
+        <p>Cargo Volume: ${this.cargo_volume}</p>
+        <p>M.S.R.P.: ${this.m_s_r_p}</p>
+        <p>Combined MPG: ${this.combined_mpg}</p>
+        <p>Quality & Reliability: ${this.quality_reliability}</p>
+        <p>Horsepower: ${this.horsepower}</p>
+        <p>Resale Value: ${this.resale_value}</p>
+        <p>Insurance Cost: ${this.insurance_cost}</p>
+        <p>Consumer Rating: ${this.consumer_rating}</p>
       </div>
+      <button id='delete-bttn'>Delete</button>
+      <br><br>
+      
     `
     return this.element
   }
 
   addOnDom(){
     Vehicle.vehiclesContainer.append(this.vehicleHTML())
+  }
+
+  static renderForm(){
+    Vehicle.vehicleForm.innerHTML += `
+    <form id="new-vehicle-form">
+    <ul>
+      <li>
+        Year: <input type="text" id="year"><br>
+        Make: <input type="text" id="make"><br>
+        Model: <input type="text" id="model"><br>
+        Engine: <input type="text" id="engine"><br>
+        Passanger Volume: <input type="text" id="passanger_volume"><br>
+        Safety Rating: <input type="text" id="safety_rating"><br>
+        Cargo Volume: <input type="text" id="cargo_volume"><br>
+        M.S.R.P.: <input type="text" id="m_s_r_p"><br>
+        Combined MPG: <input type="text" id="combined_mpg"><br>
+        Quality & Reliability: <input type="text" id="quality_reliability"><br>
+        Horsepower: <input type="text" id="horsepower"><br>
+        Resale Value: <input type="text" id="resale_value"><br>
+        Insurance Cost: <input type="text" id="insurance_cost"><br>
+        Consumer Rating: <input type="text" id="consumer_rating"><br><br>
+        <input type="submit" id="create"></input>
+        </li>
+    </ul>
+    </form>
+    `
+  }
+
+  handleClick = () =>{
+    if (event.target.innerHTML === 'Delete'){
+      this.element.remove()
+      vehicleService.deleteVehicle(this.id)
+    }
   }
 
 }

@@ -5,7 +5,7 @@ class ComparisonsController < ApplicationController
   def index
     comparisons = Comparison.all
 
-    render json: comparisons
+    render json: ComparisonsSerializer.new(comparison).serializable_hash
   end
 
   # GET /comparisons/1
@@ -14,7 +14,7 @@ class ComparisonsController < ApplicationController
     options = {
       include: [:category, :vehicle]
     }
-    render json: comparison
+    render json: ComparisonsSerializer.new(set_comparison).serializable_hash
   end
 
   # POST /comparisons
@@ -23,6 +23,7 @@ class ComparisonsController < ApplicationController
 
     if comparison.save
       render json: comparison, status: :created, location: comparison
+      render json: {message: 'Comperison successfully created!'}
     else
       render json: comparison.errors, status: :unprocessable_entity
     end
@@ -32,6 +33,7 @@ class ComparisonsController < ApplicationController
   def update
     if comparison.update(comparison_params)
       render json: comparison
+      render json: {message: 'Comperison successfully updated!'}
     else
       render json: comparison.errors, status: :unprocessable_entity
     end
@@ -40,6 +42,7 @@ class ComparisonsController < ApplicationController
   # DELETE /comparisons/1
   def destroy
     comparison.destroy
+    render json: {message: 'Comperison successfully deleted!'}
   end
 
   private
