@@ -5,21 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
   <title>Auto_Rival</title>
 </head>
 <body>
   <nav class="navbar navbar-light">
     <a class="navbar-brand">
-      <img src="auto_rival_logo.png" width="250" height="auto" class="d-inline-block align-top" alt="">
+      <img src="auto_rival_logo.png" width="auto" height="auto" class="d-inline-block align-top" alt="">
     </a>
-    <button id='new-pair-btn' class="navbar-toggler btn btn-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span>Creat new comparisons</span>
-    </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
       <div id="categories-container">
         <div class="card-body">
           <h3>Create comparison</h3>
+          <form class="add-comparison-form">
+            
+            <div class="col">
+              <select id="category" name="category" class="input-text form-control">
+                <option value="car">Car</option>
+                <option value="SUV">SUV</option>
+              </select>
+            </div>
+          </form>
+      
 
       </div>
     </div>
@@ -28,10 +36,45 @@
 
     </div>
 
+    <div id="comparison-container">
+
+    </div>
+
     <div id="form-container">
 
     </div>
   </nav>  
+
+  <div id="container">
+    <div class="col-sm-12 ">
+      <section>
+        <div class="row card">
+          <div class="card-body">
+            <div class="form-group text-center">
+              <h2> <label for="compair-type-select">What do you want to compair?</label></h2>
+              <div class="btn-group" role="group" aria-label="Basic example" id="compair-type-select">
+                <button type="button" class="btn btn-secondary btn-lg" value="car">Car</button>
+                <button type="button" class="btn btn-secondary btn-lg" value="SUV">SUV</button>
+              </div>
+            </div>
+
+            <div id="comparison-dropdowns">
+              <div id="comparison">
+                <h3><label for="vehicle-comparison">Choose your first Vehicle for comparison</label></h3>
+                <select id="vehicle-comparison" name="make" class="form-control"></select>
+              </div>
+              <div id="vehicle-comparison">
+                <h3><label for="vehicle-comparison">Choose your second Vehicle for comparison</label></h3>
+                <select id="vehilce-dropdown" name="make" class="form-control"></select>
+              </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
     
 </body>
     <script src="src/category.js"></script>
@@ -39,9 +82,7 @@
     <script src="src/categoryService.js"></script>
     <script src="src/vehicleService.js"></script>
     <script src="index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
 </html>
 
 </html>
