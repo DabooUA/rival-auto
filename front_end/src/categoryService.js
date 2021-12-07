@@ -13,4 +13,23 @@ class CategoryService{
       }
     })
   }
+
+  createCategory(){
+    const category = {
+      name: document.getElementById('name').value 
+    }
+    const configObj = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }, body: JSON.stringify(category)
+    }
+    fetch(`${this.endpoint}/category`, configObj)
+      .then(resp => resp.json())
+      .then(category => {
+        const c = new Category(category)
+        c.addOnDom()
+      })
+  }
+
 }
