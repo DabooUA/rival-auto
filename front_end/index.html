@@ -3,45 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesheets/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title>Auto_Rival</title>
 </head>
 <body>
   <nav class="navbar navbar-light">
-    <a class="navbar-brand">
-      <img src="auto_rival_logo.png" width="auto" height="auto" class="d-inline-block align-top" alt="">
-    </a>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
-      <div id="categories-container">
+    <a class="navbar-brand" href="">
+      <img src="auto_rival_logo.png" width="200" height="auto" class="d-inline-block align-center" alt="">  
+    </a>  
+    <button id='new-pair-btn' class="navbar-toggler btn btn-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span>Create New Category</span>
+    </button>  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="add-category-container card">
         <div class="card-body">
-          <h3>Create comparison</h3>
-          <form class="add-comparison-form">
-            
-            <div class="col">
-              <select id="category" name="category" class="input-text form-control">
-                <option value="car">Car</option>
-                <option value="SUV">SUV</option>
-              </select>
+          <h3>Create new category</h3>
+          <form class="add-category-from" style="">
+            <div class="row form-group">
+              <div class="col">
+                <label for="category-input">Category Name: </label>
+                <input type="text" name="name" value="" placeholder="Category name" class="input-text form-control" id="wine-input">
+              </div>
+
             </div>
-          </form>
-      
+        </div>
 
       </div>
-    </div>
-
-    <div id="vehicles-container">
-
-    </div>
-
-    <div id="comparison-container">
-
-    </div>
-
-    <div id="form-container">
-
+            
+      </div>
     </div>
   </nav>  
 
@@ -56,6 +47,19 @@
                 <button type="button" class="btn btn-secondary btn-lg" value="car">Car</button>
                 <button type="button" class="btn btn-secondary btn-lg" value="SUV">SUV</button>
               </div>
+            </div>
+
+
+            <div id="vehicles-container">
+
+            </div>
+        
+            <div id="comparison-container">
+        
+            </div>
+        
+            <div id="form-container">
+        
             </div>
 
             <div id="comparison-dropdowns">
@@ -75,6 +79,10 @@
       </section>
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
 </body>
     <script src="src/category.js"></script>

@@ -1,5 +1,6 @@
 import "bootstrap"
 import "../stylesheets/application"
+import "../stylesheets/style"
 
 const base_url = "http://127.0.0.1:3000"
 const vehicleService = new vehicleService(base_url)
