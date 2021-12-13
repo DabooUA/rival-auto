@@ -8,6 +8,11 @@ html {
   box-sizing: inherit;
 }
 
+.add-category-container, .selection-info {
+  display: none;
+  padding: 20px;
+}
+
 .row {
   display: flex;
 }
@@ -19,6 +24,19 @@ html {
 
 .navbar {
   background-color: #975d19;
+}
+
+.container-fluid {
+  column-gap: 20px;
+}
+
+.themed-grid-col {
+  background-color: rgb(95, 150, 196);
+  
+}
+
+section {
+  padding: 5% 25%;
 }
 
 #container {

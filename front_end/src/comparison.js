@@ -10,7 +10,7 @@ class Comparison{
     this.comparisonTypeSelect = document.getElementById("compair-type-select")
     this.selectComparison = document.getElementById("select-comparison")
 
-    this.element = document.createElement("ul")
+    this.element = document.createElement
     this.element.dataset.id = this.id
     this.element.id = `comparison-${this.id}`
 
@@ -27,7 +27,7 @@ class Comparison{
       if (selection === "car"){
         this.carComparison.style.display = 'block'
         this.suvComparison.style.display = 'none'
-      }else if (selection == "suv"){
+      }else if (selection == "SUV"){
         this.suvComparison.style.display = 'block'
         this.carComparison.style.display = 'none'
       }

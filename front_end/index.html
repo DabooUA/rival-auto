@@ -5,44 +5,39 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/application.scss">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title>Auto_Rival</title>
 </head>
 <body>
-  <nav class="navbar navbar-light">
+  <nav class="navbar navbar-light justify-content-center">
     <a class="navbar-brand" href="">
       <img src="auto_rival_logo.png" width="200" height="auto" class="d-inline-block align-center" alt="">  
     </a>  
-    <button id='new-pair-btn' class="navbar-toggler btn btn-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span>Create New Category</span>
-    </button>  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="add-category-container card">
-        <div class="card-body">
-          <h3>Create new category</h3>
-          <form class="add-category-from" style="">
-            <div class="row form-group">
-              <div class="col">
-                <label for="category-input">Category Name: </label>
-                <input type="text" name="name" value="" placeholder="Category name" class="input-text form-control" id="wine-input">
-              </div>
-
-            </div>
-        </div>
-
-      </div>
-            
-      </div>
-    </div>
   </nav>  
 
-  <div id="container">
+  <div id="container" align="center">
+
+    <div class="add-category-container card">
+      <div class="card-body">
+        <h3>Create new comparison!</h3>
+        <form class="add-comparison-form">
+          <div class="row form-group">
+            <div class="col">
+              <label for="category-input">Comparison Name: </label><br/><br/>
+              <input type="text" name="name" value="" placeholder="Comparison name" align="center" class="input-text form-control" id="comparison-input" >
+            </div>
+
+          </div>
+      </div>
+
+    </div>
     <div class="col-sm-12 ">
       <section>
         <div class="row card">
           <div class="card-body">
             <div class="form-group text-center">
-              <h2> <label for="compair-type-select">What do you want to compair?</label></h2>
+              <h2> <label for="compair-type-select">Start your comparison with choices below.</label></h2>
               <div class="btn-group" role="group" aria-label="Basic example" id="compair-type-select">
                 <button type="button" class="btn btn-secondary btn-lg" value="car">Car</button>
                 <button type="button" class="btn btn-secondary btn-lg" value="SUV">SUV</button>
@@ -76,9 +71,90 @@
             </div>
           </div>
         </div>
+        
       </section>
 
+      <div class="card">
+        <!-- <img src="Red-Vs-Blue.jpg" width="200" height="200" class="card-img-top" alt=""> -->
+        <div class="card-body">
+          <h5 class="card-title" align="center">Vehicle Comparison</h5><br/><br/>
+            <div class="container-fluid">
+              <div class="row hori" align="center">
+                <div class="col-lg-4 themed-grid-col" >LEFT</div>
+                <div class="col-lg-4 themed-grid-col">- Year -</div> 
+                <div class="col-lg-4 themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>
+                <div class="col themed-grid-col">- Make -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>
+                <div class="col themed-grid-col">- Model -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>
+                <div class="col themed-grid-col">- Engine -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>
+                <div class="col themed-grid-col">- Passanger Volume -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>
+                <div class="col themed-grid-col">- Safety Rating -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>
+                <div class="col themed-grid-col">- Cargo Volume -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>            
+                <div class="col themed-grid-col">- M.S.R.P. -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>             
+                <div class="col themed-grid-col">- Combined MPG -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>            
+                <div class="col themed-grid-col">- Quality Reliability -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>              
+                <div class="col themed-grid-col">- Horsepower -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>              
+                <div class="col themed-grid-col">- Resale Value -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>              
+                <div class="col themed-grid-col">- Insurance Cost -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>
+              <div class="row" align="center">
+                <div class="col themed-grid-col">LEFT</div>  
+                <div class="col themed-grid-col">- Consumer Rating -</div> 
+                <div class="col themed-grid-col">RIGHT</div>
+              </div>                 
+            </div>   
+        </div>
+      </div>
     </div>
+
+  
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
