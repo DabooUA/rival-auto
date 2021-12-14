@@ -1,6 +1,14 @@
 class ComparisonService{
   constructor(endpoint){
     this.endpoint = endpoint
+
+    // Reference to our comparison button
+    this.comparisonBtn = document.getElementById( 'btn-create-comparison' );
+
+    this.comparisonBtn.addEventListener( 'click', function() {
+      alert( 'got here!' );
+    } );
+
   }
   createComparison(){
     const comparison = {

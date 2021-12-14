@@ -18,20 +18,22 @@
 
   <div id="container" align="center">
 
+    <!-- Comparison name field -->
     <div class="add-category-container card">
       <div class="card-body">
         <h3>Create new comparison!</h3>
-        <form class="add-comparison-form">
           <div class="row form-group">
             <div class="col">
               <label for="category-input">Comparison Name: </label><br/><br/>
               <input type="text" name="name" value="" placeholder="Comparison name" align="center" class="input-text form-control" id="comparison-input" >
+              <button id="btn-create-comparison">Create Comparison</button>
             </div>
-
           </div>
       </div>
-
     </div>
+
+    <!-- Vehicle selection fields -->
+    <!--
     <div class="col-sm-12 ">
       <section>
         <div class="row card">
@@ -43,19 +45,9 @@
                 <button type="button" class="btn btn-secondary btn-lg" value="SUV">SUV</button>
               </div>
             </div>
-
-
-            <div id="vehicles-container">
-
-            </div>
-        
-            <div id="comparison-container">
-        
-            </div>
-        
-            <div id="form-container">
-        
-            </div>
+            <div id="vehicles-container"></div>
+            <div id="comparison-container"></div>
+            <div id="form-container"></div>
 
             <div id="comparison-dropdowns">
               <div id="comparison">
@@ -67,19 +59,17 @@
                 <select id="vehilce-dropdown" name="make" class="form-control"></select>
               </div>
             </div>
-
-            </div>
           </div>
         </div>
         
       </section>
 
       <div class="card">
-        <!-- <img src="Red-Vs-Blue.jpg" width="200" height="200" class="card-img-top" alt=""> -->
+        <img src="Red-Vs-Blue.jpg" width="200" height="200" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title" align="center">Vehicle Comparison</h5><br/><br/>
             <div class="container-fluid">
-              <div class="row hori" align="center">
+              <div class="row" align="center">
                 <div class="col-lg-4 themed-grid-col" >LEFT</div>
                 <div class="col-lg-4 themed-grid-col">- Year -</div> 
                 <div class="col-lg-4 themed-grid-col">RIGHT</div>
@@ -153,20 +143,16 @@
         </div>
       </div>
     </div>
-
-  
+    -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
-</body>
-    <script src="src/category.js"></script>
+  
     <script src="src/vehicle.js"></script>
-    <script src="src/categoryService.js"></script>
     <script src="src/vehicleService.js"></script>
     <script src="index.js"></script>
-   
+</body>   
 </html>
 
 </html>

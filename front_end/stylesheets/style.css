@@ -28,11 +28,14 @@ html {
 
 .container-fluid {
   column-gap: 20px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 2rem; /* Will be used instead by browsers that do not support `row-gap` */
+  row-gap: 2rem; /* Used by browsers that support `row-gap` */
 }
 
 .themed-grid-col {
-  background-color: rgb(95, 150, 196);
-  
+  background-color: rgb(95, 150, 196); 
 }
 
 section {

@@ -56,3 +56,4 @@ class VehicleService{
     .then(json => alert(json.message))
   }
 }
+
