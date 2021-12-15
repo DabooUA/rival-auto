@@ -19,10 +19,13 @@ ActiveRecord::Schema.define(version: 2021_12_05_151324) do
   end
 
   create_table "comparisons", force: :cascade do |t|
+    t.string "name"
     t.integer "category_id"
-    t.integer "vehicle_id"
+    t.integer "first_vehicle"
+    t.integer "second_vehicle"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_comparisons_on_category_id"
   end
 
   create_table "vehicles", force: :cascade do |t|
@@ -46,4 +49,5 @@ ActiveRecord::Schema.define(version: 2021_12_05_151324) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "comparisons", "categories"
 end

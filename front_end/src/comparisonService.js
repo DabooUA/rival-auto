@@ -4,12 +4,20 @@ class ComparisonService{
 
     // Reference to our comparison button
     this.comparisonBtn = document.getElementById( 'btn-create-comparison' );
-
-    this.comparisonBtn.addEventListener( 'click', function() {
-      alert( 'got here!' );
-    } );
+    this.comparisonBtn.addEventListener( 'click', this.createComparison, function(){
+      alert("got here!");
+    });
 
   }
+
+  // getComparisons(){
+  //   fetch(`${this.endpoint}/comparison`)
+  //     .then(resp => resp.json())
+  //     .then(comparison =>{
+  //       debugger
+  //     })
+    
+  // }
   createComparison(){
     const comparison = {
       category_id: document.getElementById('category_id').value

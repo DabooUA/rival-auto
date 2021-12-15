@@ -8,6 +8,7 @@
 
 car = Category.create(name: 'car')
 suv = Category.create(name: 'SUV')
+comparison = Comparison.create(name: 'comparison')
 
 Vehicle.create([
   {make: 'Honda', model: 'Accord', year: '2021', engine: '1.5L Turbo', passanger_volume: '102.7', safety_rating: '4.9 out 5', cargo_volume: '16.7', m_s_r_p: '$31,090', combined_mpg: '34', quality_reliability: '82 out 100', horsepower: '192', resale_value: '83 out 100', insurance_cost: '$6,993', consumer_rating: '4.5 out 5', category_id: 1},
@@ -21,4 +22,8 @@ Vehicle.create([
   {make: 'Toyota', model: 'Rav4', year: '2021', engine: '2.5L', passanger_volume: '98.9', safety_rating: '5 out 5', cargo_volume: '37.5', m_s_r_p: '$31,750', combined_mpg: '29', quality_reliability: '84 out 100', horsepower: '203', resale_value: '85 out 100', insurance_cost: '$6,719', consumer_rating: '3.4 out 5', category_id: 2},
 
   {make: 'Ford', model: 'Escape', year: '2021', engine: '1.5L Turbo', passanger_volume: '102.9', safety_rating: '4.9 out 5', cargo_volume: '39.2', m_s_r_p: '$30,705', combined_mpg: '28', quality_reliability: '75 out 100', horsepower: '181', resale_value: '70 out 100', insurance_cost: '$5,872', consumer_rating: '3.2 out 5', category_id: 2}
+])
+
+Comparison.create([
+  {name: 'Test', category_id: 1 ,first_vehicle: 1, second_vehicle: 2}
 ])
