@@ -25,5 +25,5 @@ Vehicle.create([
 ])
 
 Comparison.create([
-  {name: 'Test', category_id: 1 ,first_vehicle: 1, second_vehicle: 2}
+  {name: 'Test', category_id: 1 ,first_vehicle_id: 1, second_vehicle_id: 2}
 ])

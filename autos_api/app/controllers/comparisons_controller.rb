@@ -53,6 +53,6 @@ class ComparisonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comparison_params
-      params.require(:comparison).permit(:category_id, :vehicle_id, :name)
+      params.require(:comparison).permit(:name, :category_id, :first_vehicle, :second_vehicle)
     end
 end

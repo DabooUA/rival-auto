@@ -3,11 +3,11 @@ class CreateComparisons < ActiveRecord::Migration[6.1]
     create_table :comparisons do |t|
       t.string :name
       t.references :category
-      t.integer :first_vehicle
-      t.integer :second_vehicle
-
+      t.references :first_vehicle, index: true, foreign_key: {to_table: :vehicles}
+      t.references :second_vehicle, index: true, foreign_key: {to_table: :vehicles}
       t.timestamps
     end
     add_foreign_key :comparisons, :categories, column: :category_id
+
   end
 end
