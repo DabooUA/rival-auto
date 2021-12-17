@@ -3,42 +3,42 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   def index
-    categories = Category.all
+    @categories = Category.all
 
-    render json: CategorySerializer.new(categories).serializable_hash
+    render json: @categories
   end
 
   # GET /categories/1
   def show
-    render json: CategorySerializer.new(set_category).serializable_hash
+    render json: Category.new(set_category)
   end
 
-  # POST /categories
-  def create
-    category = Category.new(category_params)
+  # # POST /categories
+  # def create
+  #   category = Category.new(category_params)
 
-    if category.save
-      render json: category, status: :created, location: category
-      render json: {message: 'Category successfully created!'}
-    else
-      render json: category.errors, status: :unprocessable_entity
-    end
-  end
+  #   if category.save
+  #     render json: category, status: :created, location: category
+  #     render json: {message: 'Category successfully created!'}
+  #   else
+  #     render json: category.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # PATCH/PUT /categories/1
-  def update
-    if category.update(category_params)
-      render json: category
-    else
-      render json: category.errors, status: :unprocessable_entity
-    end
-  end
+  # # PATCH/PUT /categories/1
+  # def update
+  #   if category.update(category_params)
+  #     render json: category
+  #   else
+  #     render json: category.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # DELETE /categories/1
-  def destroy
-    category.destroy
-    render json: {message: 'Category successfully deleted!'}
-  end
+  # # DELETE /categories/1
+  # def destroy
+  #   category.destroy
+  #   render json: {message: 'Category successfully deleted!'}
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,26 +1,24 @@
 class ComparisonService{
   constructor(endpoint){
     this.endpoint = endpoint
-
-    // Reference to our comparison button
-    this.comparisonBtn = document.getElementById( 'btn-create-comparison' );
-    this.comparisonBtn.addEventListener( 'click', this.createComparison, function(){
-      alert("got here!");
-    });
-
   }
 
-  // getComparisons(){
-  //   fetch(`${this.endpoint}/comparison`)
-  //     .then(resp => resp.json())
-  //     .then(comparison =>{
-  //       debugger
-  //     })
-    
-  // }
+  getComparisons(){
+    fetch(`${this.endpoint}/comparisons`)
+      .then(resp => resp.json())
+      .then(comparisons => {
+        for (const comparison of comparisons){
+          const c = new Comparison(comparison)
+          c.addOnDom()
+        }
+      })
+  }
   createComparison(){
     const comparison = {
-      category_id: document.getElementById('category_id').value
+      name: document.getElementById('comparison-input').value,
+      // category_id: document.getElementById('category_id').value,
+      // first_vehicle_id: document.getElementById('first_vehicle_id').value,
+      // second_vehicle_id: document.getElementById('second_vehicle_id').value
     }
     const configObj = {
       method: 'POST',
@@ -28,7 +26,7 @@ class ComparisonService{
         'Content-Type': 'application/json'
       }, body: JSON.stringify(comparison)
     }
-    fetch(`${this.endpoint}/comparison`, configObj)
+    fetch(`${this.endpoint}/comparisons`, configObj)
       .then(resp => resp.json())
       .then(comparison => {
         const c = new Comparison(comparison)

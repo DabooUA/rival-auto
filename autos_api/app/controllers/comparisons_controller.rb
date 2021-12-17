@@ -3,23 +3,19 @@ class ComparisonsController < ApplicationController
 
   # GET /comparisons
   def index
-    comparisons = Comparison.all
+    @comparisons = Comparison.all
 
-    render json: ComparisonsSerializer.new(comparison).serializable_hash
+    render json: @comparisons
   end
 
   # GET /comparisons/1
   def show
-    comparison = Comparison.find(params[:id])
-    options = {
-      include: [:category, :vehicle]
-    }
-    render json: ComparisonsSerializer.new(set_comparison).serializable_hash
+    render json: @comparison
   end
 
   # POST /comparisons
   def create
-    comparison = Comparison.new(comparison_params)
+    @comparison = Comparison.new(comparison_params)
 
     if comparison.save
       render json: comparison, status: :created, location: comparison
@@ -53,6 +49,6 @@ class ComparisonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comparison_params
-      params.require(:comparison).permit(:name, :category_id, :first_vehicle, :second_vehicle)
+      params.require(:comparison).permit(:name, :category_id, :first_vehicle_id, :second_vehicle_id)
     end
 end

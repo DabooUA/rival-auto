@@ -22,7 +22,6 @@ class Vehicle{
     this.insurance_cost = insurance_cost
     this.consumer_rating = consumer_rating
 
-    this.element = document.createElement('li')
     this.element.dataset.id = this.id
     this.element.id = `vehicle-${this.id}`
     this.element.addEventListener('click', this.handleClick)
