@@ -34,6 +34,10 @@ html {
   row-gap: 2rem; /* Used by browsers that support `row-gap` */
 }
 
+.btn-block{
+  background-color: #975d19;
+}
+
 .themed-grid-col {
   background-color: rgb(95, 150, 196); 
 }

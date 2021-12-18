@@ -4,67 +4,49 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheets" href="stylesheets/style.css">
   <link rel="stylesheets" href="stylesheets/application.scss">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title>My_Garage</title>
 </head>
 <body>
   <nav class="navbar navbar-light justify-content-center">
     <a class="navbar-brand" href="">
       <img src="my_garage_logo.png" width="200" height="auto" class="d-inline-block align-center" alt="">  
-    </a>  
-  </nav>  
+    </a> <br/><br/>
 
- <!-- 
-  <div id="container" align="center">
+    <button id='new-vehicle-btn' class="navbar-toggler btn-secondary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span>Create new vehicle</span>
+    </button>
 
-   Comparison name field 
-    <div class="add-category-container card">
-      <div class="card-body">
-        <h3>Create new comparison!</h3>
-          <div class="row form-group">
-            <div class="col">
-              <label for="comparison-input">Comparison Name: </label><br/><br/>
-              <input type="text" name="name" value="" placeholder="Comparison name" align="center" class="input-text form-control" id="comparison-input"><br/><br/>
-              <button id="btn-create-comparison">Create Comparison</button>
-            </div>
-          </div>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="card-body">
+          <h3>Create new vehicle</h3>
+          <form class="add-vehicle-form"> 
+            <div class="row form-group">
+              <div id="form-container"></div>
+            </div>             
+          </form>   
+          </div>   
     </div>
-    -->
-    <div id="vehicles-container"></div>
-    <div id="form-container"></div>
-
-    <!-- Vehicle selection fields -->
-    <!--
-    <div class="col-sm-12 ">
-      <section>
-        <div class="row card">
-          <div class="card-body">
-            <div class="form-group text-center">
-              <h2> <label for="compair-type-select">Start your comparison with choices below.</label></h2>
-              <div class="btn-group" role="group" aria-label="Basic example" id="compair-type-select">
-                <button type="button" class="btn btn-secondary btn-lg" value="car">Car</button>
-                <button type="button" class="btn btn-secondary btn-lg" value="SUV">SUV</button>
-              </div>
-            </div>
-            
-
-            <div id="comparison-dropdowns">
-              <div id="comparison">
-                <h3><label for="vehicle-comparison">Choose your first Vehicle for comparison</label></h3>
-                <select id="vehicle-comparison" name="make" class="form-control"></select>
-              </div>
-              <div id="vehicle-comparison">
-                <h3><label for="vehicle-comparison">Choose your second Vehicle for comparison</label></h3>
-                <select id="vehilce-dropdown" name="make" class="form-control"></select>
-              </div>
-            </div>
+  
+  </nav>       
+    
+    <div class="card">
+      <div class="card-body">
+        <div class="container-fluid">
+          <div class="flex-row" align="center">
+            <div class="col themed-grid-col" id="vehicles-container"></div>
           </div>
         </div>
-        
-      </section>
+      </div>
+    </div>
+    
+  
+  <!-- 
+     <img src="auto_background.jpg" width="auto_background" height="auto_background" class="card-img-top" alt="">
+
 
       <div class="card">
         <img src="Red-Vs-Blue.jpg" width="200" height="200" class="card-img-top" alt="">
@@ -80,71 +62,7 @@
                 <div class="col themed-grid-col">LEFT</div>
                 <div class="col themed-grid-col">- Make -</div> 
                 <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>
-                <div class="col themed-grid-col">- Model -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>
-                <div class="col themed-grid-col">- Engine -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>
-                <div class="col themed-grid-col">- Passanger Volume -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>
-                <div class="col themed-grid-col">- Safety Rating -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>
-                <div class="col themed-grid-col">- Cargo Volume -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>            
-                <div class="col themed-grid-col">- M.S.R.P. -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>             
-                <div class="col themed-grid-col">- Combined MPG -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>            
-                <div class="col themed-grid-col">- Quality Reliability -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>              
-                <div class="col themed-grid-col">- Horsepower -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>              
-                <div class="col themed-grid-col">- Resale Value -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>              
-                <div class="col themed-grid-col">- Insurance Cost -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>
-              <div class="row" align="center">
-                <div class="col themed-grid-col">LEFT</div>  
-                <div class="col themed-grid-col">- Consumer Rating -</div> 
-                <div class="col themed-grid-col">RIGHT</div>
-              </div>                 
-            </div>   
-        </div>
-      </div>
-    </div>
+              </div>             
    -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -152,7 +70,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   
     <script src="src/vehicle.js"></script>
+    <script src="src/category.js"></script>
     <script src="src/vehicleService.js"></script>
+    <script src="src/categoryService.js"></script>
     <script src="index.js"></script>
 </body>   
 </html>

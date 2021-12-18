@@ -26,7 +26,8 @@ class Vehicle{
     this.element.dataset.id = this.id
     this.element.id = `vehicle-${this.id}`
     this.element.addEventListener('click', this.handleClick)
-
+    this.newVehicleButton = document.getElementById('new-vehicle-btn')
+    this.newVehicleButton.addEventListener('click', this.renderForm)
     Vehicle.all.push(this)
   }
 
@@ -47,8 +48,7 @@ class Vehicle{
         <p>Consumer Rating: ${this.consumer_rating}</p>
       </div>
       <button id='delete-bttn'>Delete</button>
-      <br><br>
-      
+      <br><br>  
     `
     return this.element
   }
@@ -60,25 +60,23 @@ class Vehicle{
   static renderForm(){
     Vehicle.vehicleForm.innerHTML += `
     <form id="new-vehicle-form">
-    <ul>
-      <li>
-        Year: <input type="text" id="year"><br>
-        Make: <input type="text" id="make"><br>
-        Model: <input type="text" id="model"><br>
-        Engine: <input type="text" id="engine"><br>
-        Passanger Volume: <input type="text" id="passanger_volume"><br>
-        Safety Rating: <input type="text" id="safety_rating"><br>
-        Cargo Volume: <input type="text" id="cargo_volume"><br>
-        M.S.R.P.: <input type="text" id="m_s_r_p"><br>
-        Combined MPG: <input type="text" id="combined_mpg"><br>
-        Quality & Reliability: <input type="text" id="quality_reliability"><br>
-        Horsepower: <input type="text" id="horsepower"><br>
-        Resale Value: <input type="text" id="resale_value"><br>
-        Insurance Cost: <input type="text" id="insurance_cost"><br>
-        Consumer Rating: <input type="text" id="consumer_rating"><br><br>
-        <input type="submit" id="create"></input>
-        </li>
-    </ul>
+      <ul>       
+          Year: <input type="text" id="year"><br/>
+          Make: <input type="text" id="make"><br>
+          Model: <input type="text" id="model"><br>
+          Engine: <input type="text" id="engine"><br>
+          Passanger Volume: <input type="text" id="passanger_volume"><br>
+          Safety Rating: <input type="text" id="safety_rating"><br>
+          Cargo Volume: <input type="text" id="cargo_volume"><br>
+          M.S.R.P.: <input type="text" id="m_s_r_p"><br>
+          Combined MPG: <input type="text" id="combined_mpg"><br>
+          Quality & Reliability: <input type="text" id="quality_reliability"><br>
+          Horsepower: <input type="text" id="horsepower"><br>
+          Resale Value: <input type="text" id="resale_value"><br>
+          Insurance Cost: <input type="text" id="insurance_cost"><br>
+          Consumer Rating: <input type="text" id="consumer_rating"><br>
+          <input type="submit" id="create"></input>         
+      </ul>
     </form>
     `
   }
