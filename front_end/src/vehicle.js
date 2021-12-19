@@ -47,7 +47,7 @@ class Vehicle{
         <p>Insurance Cost: ${this.insurance_cost}</p>
         <p>Consumer Rating: ${this.consumer_rating}</p>
       </div>
-      <button id='delete-bttn'>Delete</button>
+      <button>Delete</button>
       <br><br>  
     `
     return this.element
@@ -57,7 +57,7 @@ class Vehicle{
     Vehicle.vehiclesContainer.append(this.vehicleHTML())
   }
 
-  static renderForm(){
+  renderForm(){
     Vehicle.vehicleForm.innerHTML += `
     <form id="new-vehicle-form">
       <ul>       
@@ -75,16 +75,19 @@ class Vehicle{
           Resale Value: <input type="text" id="resale_value"><br>
           Insurance Cost: <input type="text" id="insurance_cost"><br>
           Consumer Rating: <input type="text" id="consumer_rating"><br>
-          <input type="submit" id="create"></input>         
+          <button type="button">Create</button>        
       </ul>
     </form>
     `
   }
 
   handleClick = () =>{
+    console.log(event.target.innerHTML)
     if (event.target.innerHTML === 'Delete'){
       this.element.remove()
       vehicleService.deleteVehicle(this.id)
+    } else if(event.target.innerHTML === 'Create'){
+      alert('Got here!')
     }
   }
 

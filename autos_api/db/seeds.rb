@@ -7,10 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 car = Category.create(name: 'car')
-suv = Category.create(name: 'SUV')
-comparison = Comparison.create(name: 'comparison')
+suv = Category.create(name: 'suv')
 
-Vehicle.create([
+vehicles = Vehicle.create([
   {make: 'Honda', model: 'Accord', year: '2021', engine: '1.5L Turbo', passanger_volume: '102.7', safety_rating: '4.9 out 5', cargo_volume: '16.7', m_s_r_p: '$31,090', combined_mpg: '34', quality_reliability: '82 out 100', horsepower: '192', resale_value: '83 out 100', insurance_cost: '$6,993', consumer_rating: '4.5 out 5', category_id: 1},
 
   {make: 'Toyota', model: 'Camry', year: '2021', engine: '2.5L', passanger_volume: '100.4', safety_rating: '4.9 out 5', cargo_volume: '16.7', m_s_r_p: '$31,090', combined_mpg: '34', quality_reliability: '82 out 100', horsepower: '203', resale_value: '84 out 100', insurance_cost: '$6,993', consumer_rating: '4.5 out 5', category_id: 1},
@@ -24,6 +23,3 @@ Vehicle.create([
   {make: 'Ford', model: 'Escape', year: '2021', engine: '1.5L Turbo', passanger_volume: '102.9', safety_rating: '4.9 out 5', cargo_volume: '39.2', m_s_r_p: '$30,705', combined_mpg: '28', quality_reliability: '75 out 100', horsepower: '181', resale_value: '70 out 100', insurance_cost: '$5,872', consumer_rating: '3.2 out 5', category_id: 2}
 ])
 
-Comparison.create([
-  {name: 'Test', category_id: 1 ,first_vehicle_id: 1, second_vehicle_id: 2}
-])

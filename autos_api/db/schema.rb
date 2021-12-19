@@ -10,24 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_05_151324) do
+ActiveRecord::Schema.define(version: 2021_12_04_202014) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "comparisons", force: :cascade do |t|
-    t.string "name"
-    t.integer "category_id"
-    t.integer "first_vehicle_id"
-    t.integer "second_vehicle_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_comparisons_on_category_id"
-    t.index ["first_vehicle_id"], name: "index_comparisons_on_first_vehicle_id"
-    t.index ["second_vehicle_id"], name: "index_comparisons_on_second_vehicle_id"
   end
 
   create_table "vehicles", force: :cascade do |t|
@@ -49,9 +37,8 @@ ActiveRecord::Schema.define(version: 2021_12_05_151324) do
     t.string "consumer_rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_vehicles_on_category_id"
   end
 
-  add_foreign_key "comparisons", "categories"
-  add_foreign_key "comparisons", "vehicles", column: "first_vehicle_id"
-  add_foreign_key "comparisons", "vehicles", column: "second_vehicle_id"
+  add_foreign_key "vehicles", "categories"
 end

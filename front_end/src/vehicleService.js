@@ -30,7 +30,7 @@ class VehicleService{
       resale_value: document.getElementById('resale_value').value,
       insurance_cost: document.getElementById('insurance_cost').value,
       consumer_rating: document.getElementById('consumer_rating').value,
-      category_id: 1
+      category_name: document.getElementById('category_name').value
     }
     const configObj = {
       method: 'POST',

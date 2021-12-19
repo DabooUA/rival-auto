@@ -1,7 +1,7 @@
 class CreateVehicles < ActiveRecord::Migration[6.1]
   def change
     create_table :vehicles do |t|
-      t.integer :category_id
+      t.references :category, index: true, foreign_key: {to_table: :categories}
       t.string :year
       t.string :make
       t.string :model
