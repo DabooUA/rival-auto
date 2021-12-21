@@ -26,7 +26,7 @@ class VehicleService{
       m_s_r_p: document.getElementById('m_s_r_p').value,
       combined_mpg: document.getElementById('combined_mpg').value,
       quality_reliability: document.getElementById('quality_reliability').value,
-      horspower: document.getElementById('horsepower').value,
+      horsepower: document.getElementById('horsepower').value,
       resale_value: document.getElementById('resale_value').value,
       insurance_cost: document.getElementById('insurance_cost').value,
       consumer_rating: document.getElementById('consumer_rating').value,
@@ -44,8 +44,8 @@ class VehicleService{
       const v = new Vehicle(vehicle)
       v.addOnDom() 
     })
-    .then(resp => resp.json())
-    .then(json => alert(json.message))
+    // .then(resp => resp.json())
+    // .then(json => alert(json.message))
   }
   deleteVehicle(id){
     fetch(`${this.endpoint}/vehicles/${id}`,{

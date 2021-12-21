@@ -6,7 +6,7 @@ Vehicle.vehicleForm.addEventListener('submit', handleSubmit)
 vehicleService.getVehicles()
 Vehicle.renderForm()
 
-function handleSubmit(){
+function handleSubmit(event){
   event.preventDefault()
   vehicleService.createVehicle()
   event.target.reset()

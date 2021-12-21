@@ -15,6 +15,7 @@ class VehiclesController < ApplicationController
 
   # POST /vehicles
   def create
+ 
     @vehicle = Vehicle.new(vehicle_params)
 
     if @vehicle.save
