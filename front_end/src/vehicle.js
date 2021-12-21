@@ -22,12 +22,16 @@ class Vehicle{
     this.insurance_cost = insurance_cost
     this.consumer_rating = consumer_rating
 
+    // Setup <ul></ul> to display vehicles
     this.element = document.createElement('ul')
     this.element.dataset.id = this.id
     this.element.id = `vehicle-${this.id}`
-    this.element.addEventListener('click', this.handleClick)
-    this.newVehicleButton = document.getElementById('new-vehicle-btn')
-    this.newVehicleButton.addEventListener('click', this.renderForm)
+    this.element.addEventListener('click', this.handleDelete)
+
+    // Call renderForm() when new vehicle button is clicked
+    // this.newVehicleButton = document.getElementById('new-vehicle-btn')
+    // this.newVehicleButton.addEventListener('click', this.renderForm )
+
     Vehicle.all.push(this)
   }
 
@@ -45,10 +49,10 @@ class Vehicle{
         <p>Horsepower: ${this.horsepower}</p>
         <p>Resale Value: ${this.resale_value}</p>
         <p>Insurance Cost: ${this.insurance_cost}</p>
-        <p>Consumer Rating: ${this.consumer_rating}</p>
+        <p>Consumer Rating: ${this.consumer_rating}</p> 
       </div>
-      <button>Delete</button>
-      <br><br>  
+      <button id='delete-bttn'>Delete</button>
+      <br/><br/>  
     `
     return this.element
   }
@@ -57,7 +61,7 @@ class Vehicle{
     Vehicle.vehiclesContainer.append(this.vehicleHTML())
   }
 
-  renderForm(){
+  static renderForm(){
     Vehicle.vehicleForm.innerHTML += `
     <form id="new-vehicle-form">
       <ul>       
@@ -75,20 +79,28 @@ class Vehicle{
           Resale Value: <input type="text" id="resale_value"><br>
           Insurance Cost: <input type="text" id="insurance_cost"><br>
           Consumer Rating: <input type="text" id="consumer_rating"><br>
-          <button type="button">Create</button>        
+          Category: <select id="category_id">
+                      <option value="1">Car</option>
+                      <option value="2">SUV</option>
+                    </select><br/><br/>
+           
+          <input type="submit" id="create">     
       </ul>
     </form>
     `
   }
 
-  handleClick = () =>{
-    console.log(event.target.innerHTML)
-    if (event.target.innerHTML === 'Delete'){
+  // <button id="create-btn">Create</button>  
+
+  handleDelete = () =>{
+    if (event.target.innerHTML === 'Delete'){ 
       this.element.remove()
       vehicleService.deleteVehicle(this.id)
-    } else if(event.target.innerHTML === 'Create'){
-      alert('Got here!')
-    }
+    }   
   }
+
+  // createVehicle = () =>{
+  //   vehicleService.createVehicle()
+  // }
 
 }

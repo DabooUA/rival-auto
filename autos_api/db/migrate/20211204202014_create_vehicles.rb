@@ -1,7 +1,7 @@
 class CreateVehicles < ActiveRecord::Migration[6.1]
   def change
     create_table :vehicles do |t|
-      t.references :category, index: true, foreign_key: {to_table: :categories}
+      t.integer :category_id
       t.string :year
       t.string :make
       t.string :model
@@ -14,7 +14,6 @@ class CreateVehicles < ActiveRecord::Migration[6.1]
       t.string :quality_reliability
       t.string :horsepower
       t.string :resale_value
-      t.string :picutre
       t.string :insurance_cost
       t.string :consumer_rating
 

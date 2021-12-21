@@ -30,7 +30,7 @@ class VehicleService{
       resale_value: document.getElementById('resale_value').value,
       insurance_cost: document.getElementById('insurance_cost').value,
       consumer_rating: document.getElementById('consumer_rating').value,
-      category_name: document.getElementById('category_name').value
+      category_id: document.getElementById('category_id').value
     }
     const configObj = {
       method: 'POST',
@@ -44,6 +44,8 @@ class VehicleService{
       const v = new Vehicle(vehicle)
       v.addOnDom() 
     })
+    .then(resp => resp.json())
+    .then(json => alert(json.message))
   }
   deleteVehicle(id){
     fetch(`${this.endpoint}/vehicles/${id}`,{

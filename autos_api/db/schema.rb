@@ -32,13 +32,10 @@ ActiveRecord::Schema.define(version: 2021_12_04_202014) do
     t.string "quality_reliability"
     t.string "horsepower"
     t.string "resale_value"
-    t.string "picutre"
     t.string "insurance_cost"
     t.string "consumer_rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_vehicles_on_category_id"
   end
 
-  add_foreign_key "vehicles", "categories"
 end
